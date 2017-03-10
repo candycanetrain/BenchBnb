@@ -1,4 +1,4 @@
-var path = require("path");
+const path = require('path');
 
 module.exports = {
   context: __dirname,
@@ -16,11 +16,19 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015']
+        }
       }
     ]
   },
   devtool: 'source-maps',
   resolve: {
-    extensions: ["", ".js", ".jsx" ]
+    extensions: ["*", ".js", ".jsx" ]
   }
 };
