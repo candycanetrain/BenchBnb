@@ -19,12 +19,14 @@ export const logout = () => dispatch => (
   APIUtil.logout().then(user => dispatch(receiveCurrentUser(null)))
 );
 
-export const receiveErrors = errors => dispatch => ({
+
+
+export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
 });
 
-export const receiveCurrentUser = user => dispatch => ({
+export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
-  user
+  currentUser
 });
